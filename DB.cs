@@ -25,6 +25,7 @@ namespace myFirstApp
                 con = new SqlConnection(conString);
                 con.Open();
                 MessageBox.Show("connected");
+
             }
             catch(Exception e) 
             {
