@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace myFirstApp
 {
@@ -26,7 +25,7 @@ namespace myFirstApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MySqlDataReader dataReader;
+            SqlDataReader dataReader;
             string output = "";
 
 
@@ -132,6 +131,11 @@ namespace myFirstApp
         private void txtID_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            DB.ConnectDB();
         }
     }
     

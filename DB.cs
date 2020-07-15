@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace myFirstApp
 {
    public static class DB
 
     {
-        static MySqlConnection con;
+        static SqlConnection con;
 
        
         public static void ConnectDB()  //build database connection
@@ -20,9 +20,11 @@ namespace myFirstApp
             //string conString = "SERVER=localhost;DATABASE= unreal;UID=root;PASSWORD=1234";
             try
             {
-                string conString = "SERVER=localhost;DATABASE= unreal;UID=root;PASSWORD=1234";
-                con = new MySqlConnection(conString);
+                //string conString = @"Data Source=localhost;Initial Catalog=garageManagement;Integrated Security=True";
+                string conString = @"Data Source=192.168.8.1,1433;Network Library=DBMSSOCN;Initial Catalog=garageManagement;Integrated Security=True";
+                con = new SqlConnection(conString);
                 con.Open();
+                MessageBox.Show("connected");
             }
             catch(Exception e) 
             {
@@ -41,12 +43,12 @@ namespace myFirstApp
         {
             ConnectDB();
 
-            MySqlCommand command;
-            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
             string sql = "";
 
             sql = "insert into admin values(" + adminID + ",'" + userName + "','" + password + "')";
-            command = new MySqlCommand(sql, con);
+            command = new SqlCommand(sql, con);
             adapter.InsertCommand = command;
             adapter.InsertCommand.ExecuteNonQuery();
 
@@ -56,18 +58,18 @@ namespace myFirstApp
             command.Dispose();
         }
 
-        public static MySqlDataReader readQuery(string query) //read MySQL query
+        public static SqlDataReader readQuery(string query) //read MySQL query
         {
             ConnectDB();
 
             try
             {
-                MySqlCommand command;
-                MySqlDataReader dataReader;
+                SqlCommand command;
+                SqlDataReader dataReader;
 
 
 
-                command = new MySqlCommand(query, con);
+                command = new SqlCommand(query, con);
                 dataReader = command.ExecuteReader();
 
 

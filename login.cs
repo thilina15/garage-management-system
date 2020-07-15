@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace myFirstApp
 {
@@ -53,10 +53,13 @@ namespace myFirstApp
 
             if (isAdmin) //check admin details
             {
-                MySqlDataReader loginDetails =   DB.readQuery("select adminID, password from admin where adminID = "+ID+" and password= '"+password+"'");
+                SqlDataReader loginDetails =   DB.readQuery("select adminID, password from admin where adminID = "+ID+" and password= '"+password+"'");
                 if (loginDetails.HasRows)
                 {
                     MessageBox.Show("user found");
+                    adminPage ap = new adminPage();
+                    this.Close();
+                    ap.Show();
                 }
                 else
                 {
@@ -65,7 +68,7 @@ namespace myFirstApp
             }
             else //check garage details
             {
-                MySqlDataReader loginDetails = DB.readQuery("select garageID, password from garage where garageID = " + ID + " and password= '" + password + "'");
+                SqlDataReader loginDetails = DB.readQuery("select garageID, password from garage where garageID = " + ID + " and password= '" + password + "'");
                 if (loginDetails.HasRows)
                 {
                     MessageBox.Show("user found");

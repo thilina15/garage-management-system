@@ -72,9 +72,10 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1339, 664);
+            this.tabControl1.Size = new System.Drawing.Size(1326, 699);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -83,7 +84,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 70);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1331, 590);
+            this.tabPage1.Size = new System.Drawing.Size(1318, 625);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Home";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -94,9 +95,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.listView2);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(561, 33);
+            this.panel2.Location = new System.Drawing.Point(502, 33);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(379, 529);
+            this.panel2.Size = new System.Drawing.Size(379, 541);
             this.panel2.TabIndex = 3;
             // 
             // listView2
@@ -106,7 +107,7 @@
             this.listView2.HideSelection = false;
             this.listView2.Location = new System.Drawing.Point(32, 69);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(329, 440);
+            this.listView2.Size = new System.Drawing.Size(329, 452);
             this.listView2.TabIndex = 0;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
@@ -126,9 +127,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.listView1);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(946, 33);
+            this.panel1.Location = new System.Drawing.Point(887, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 529);
+            this.panel1.Size = new System.Drawing.Size(379, 541);
             this.panel1.TabIndex = 2;
             // 
             // listView1
@@ -136,9 +137,9 @@
             this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(32, 69);
+            this.listView1.Location = new System.Drawing.Point(31, 69);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(329, 440);
+            this.listView1.Size = new System.Drawing.Size(329, 452);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -158,7 +159,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 70);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1331, 590);
+            this.tabPage2.Size = new System.Drawing.Size(1318, 625);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Job Sheet";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -177,7 +178,7 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(541, 630);
+            this.panel3.Size = new System.Drawing.Size(541, 665);
             this.panel3.TabIndex = 0;
             // 
             // label7
@@ -192,6 +193,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -266,7 +269,7 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 70);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1348, 577);
+            this.tabPage3.Size = new System.Drawing.Size(1318, 625);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Inventory";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -276,7 +279,7 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 70);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1348, 577);
+            this.tabPage4.Size = new System.Drawing.Size(1318, 625);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "People";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -285,7 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1356, 688);
+            this.ClientSize = new System.Drawing.Size(1343, 723);
             this.Controls.Add(this.tabControl1);
             this.Name = "adminPage";
             this.Text = "adminPage";
