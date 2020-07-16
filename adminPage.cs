@@ -15,7 +15,7 @@ namespace myFirstApp
         public adminPage()
         {
             InitializeComponent();
-            comboBox1.Items.Add("thilinasd");
+            comboCusID.Items.Add("thilinasd");
         }
 
         private void adminPage_Load(object sender, EventArgs e)
