@@ -45,7 +45,7 @@
             this.txtUserName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(186, 221);
+            this.txtUserName.Location = new System.Drawing.Point(165, 221);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(139, 20);
             this.txtUserName.TabIndex = 1;
@@ -55,7 +55,7 @@
             // 
             this.textPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textPassword.Location = new System.Drawing.Point(186, 261);
+            this.textPassword.Location = new System.Drawing.Point(165, 261);
             this.textPassword.Name = "textPassword";
             this.textPassword.PasswordChar = '*';
             this.textPassword.Size = new System.Drawing.Size(139, 20);
@@ -67,7 +67,7 @@
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(140, 221);
+            this.label1.Location = new System.Drawing.Point(119, 221);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 20);
             this.label1.TabIndex = 1;
@@ -79,7 +79,7 @@
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Default;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(83, 261);
+            this.label2.Location = new System.Drawing.Point(62, 261);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 20);
             this.label2.TabIndex = 1;
@@ -121,7 +121,7 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(370, 411);
+            this.button2.Location = new System.Drawing.Point(327, 447);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
@@ -135,7 +135,7 @@
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(289, 411);
+            this.button3.Location = new System.Drawing.Point(246, 447);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 5;
@@ -160,7 +160,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(457, 446);
+            this.ClientSize = new System.Drawing.Size(414, 482);
             this.Controls.Add(this.loginPictureBox);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

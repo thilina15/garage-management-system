@@ -15,11 +15,13 @@ namespace myFirstApp
         public adminPage()
         {
             InitializeComponent();
-            comboCusID.Items.Add("thilinasd");
+            
         }
 
         private void adminPage_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sunilGarageDataSet.items' table. You can move, or remove it, as needed.
+            this.itemsTableAdapter.Fill(this.sunilGarageDataSet.items);
 
         }
 
@@ -31,6 +33,66 @@ namespace myFirstApp
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             MessageBox.Show("hellow");
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
