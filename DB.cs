@@ -20,9 +20,9 @@ namespace myFirstApp
             //string conString = "SERVER=localhost;DATABASE= unreal;UID=root;PASSWORD=1234";
             try
             {
-                string conString = @"Data Source=localhost;Initial Catalog=garageManagement;Integrated Security=True";
-                //string conString = @"Data Source=aaasql.database.windows.net;;Initial Catalog=garageManagement;Integrated Security=True";
-
+                //string conString = @"Data Source=localhost;Initial Catalog=garageManagement;Integrated Security=True";
+                //string conString = @"Data Source=aaasql.database.windows.net;;Initial Catalog=garageManagement;User ID=aaasql;Password=abcd123";
+                string conString = @"Data Source=south.database.windows.net; Initial Catalog = student;User ID = thilina; Password =abcd@123;";
                 con = new SqlConnection(conString);
                 con.Open();
                 MessageBox.Show("connected");
