@@ -43,6 +43,7 @@
             // txtUserName
             // 
             this.txtUserName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtUserName.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtUserName.Location = new System.Drawing.Point(186, 221);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(139, 20);
@@ -52,6 +53,7 @@
             // textPassword
             // 
             this.textPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textPassword.Cursor = System.Windows.Forms.Cursors.Default;
             this.textPassword.Location = new System.Drawing.Point(186, 261);
             this.textPassword.Name = "textPassword";
             this.textPassword.PasswordChar = '*';
@@ -62,6 +64,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(140, 221);
             this.label1.Name = "label1";
@@ -73,6 +76,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Default;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(83, 261);
             this.label2.Name = "label2";
@@ -98,6 +102,7 @@
             this.lableName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lableName.AutoSize = true;
+            this.lableName.Cursor = System.Windows.Forms.Cursors.Default;
             this.lableName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lableName.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lableName.Location = new System.Drawing.Point(142, 36);
@@ -137,6 +142,7 @@
             // loginPictureBox
             // 
             this.loginPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.loginPictureBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.loginPictureBox.Image = global::myFirstApp.Properties.Resources.download;
             this.loginPictureBox.Location = new System.Drawing.Point(186, 97);
             this.loginPictureBox.Name = "loginPictureBox";
@@ -160,7 +166,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textPassword);
             this.Controls.Add(this.txtUserName);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
