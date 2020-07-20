@@ -56,7 +56,7 @@ namespace myFirstApp
 
             if (isAdmin) //check admin details
             {
-                SqlDataReader loginDetails =   DB.readQuery("select adminID, password from admin where adminID = "+ID+" and password= '"+password+"'");
+                SqlDataReader loginDetails =   DB.readQuery("select adminID, password from admins where adminID = "+ID+" and password= '"+password+"'");
                 if (loginDetails.HasRows)
                 {
                     MessageBox.Show("user found");

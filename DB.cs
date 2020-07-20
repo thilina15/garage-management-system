@@ -22,7 +22,7 @@ namespace myFirstApp
             {
                 //string conString = @"Data Source=localhost;Initial Catalog=garageManagement;Integrated Security=True";
                 //string conString = @"Data Source=aaasql.database.windows.net;;Initial Catalog=garageManagement;User ID=aaasql;Password=abcd123";
-                string conString = @"Data Source=south.database.windows.net; Initial Catalog = sunilMotors;User ID = thilina; Password =abcd@123;";
+                string conString = @"Data Source=south.database.windows.net; Initial Catalog = sunilGarage;User ID = thilina; Password =abcd@123;";
                 con = new SqlConnection(conString);
                 con.Open();
                 MessageBox.Show("connected");
@@ -48,7 +48,7 @@ namespace myFirstApp
             SqlDataAdapter adapter = new SqlDataAdapter();
             string sql = "";
 
-            sql = "insert into admin values(" + adminID + ",'" + userName + "','" + password + "')";
+            sql = "insert into admins values(" + adminID + ",'" + userName + "','" + password + "')";
             command = new SqlCommand(sql, con);
             adapter.InsertCommand = command;
             adapter.InsertCommand.ExecuteNonQuery();
