@@ -25,11 +25,14 @@ namespace myFirstApp
 
             if (isAdmin)
             {
-                lableName.Text = "login as Admin";
+                lableName.Text = "    ADMIN";
             }
             else
             {
-                lableName.Text = "login as Garage";
+                lableName.Text = "MECHANIST";
+                loginPictureBox.Image = Properties.Resources.download1;
+
+                
             }
 
 
@@ -102,6 +105,11 @@ namespace myFirstApp
         }
 
         private void login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lableName_Click(object sender, EventArgs e)
         {
 
         }
