@@ -43,7 +43,8 @@
             // txtUserName
             // 
             this.txtUserName.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtUserName.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.Location = new System.Drawing.Point(186, 221);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(139, 20);
@@ -53,7 +54,7 @@
             // textPassword
             // 
             this.textPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textPassword.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textPassword.Location = new System.Drawing.Point(186, 261);
             this.textPassword.Name = "textPassword";
             this.textPassword.PasswordChar = '*';
