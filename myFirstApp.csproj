@@ -239,6 +239,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Gallery 8.jpg" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\240_F_68670247_EclWAJNOCufkhMFNLTe44wiCZTGnavcf.jpg" />
+    <None Include="Resources\diskette.png" />
     <Content Include="sunilMotors.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>sunilMotors.edmx</DependentUpon>

@@ -20,9 +20,7 @@ namespace myFirstApp
 
         private void adminPage_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sunilGarageDataSet.items' table. You can move, or remove it, as needed.
-            this.itemsTableAdapter.Fill(this.sunilGarageDataSet.items);
-
+        
         }
 
         private void tabPage3_Click(object sender, EventArgs e)
@@ -91,6 +89,11 @@ namespace myFirstApp
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
         }
