@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace myFirstApp
 {
-    public partial class mechanistPage : Form
+    public partial class addingSpareParts : Form
     {
-        public mechanistPage()
+        public addingSpareParts()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
