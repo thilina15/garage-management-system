@@ -25,6 +25,7 @@ namespace myFirstApp
         {
             login admin = new login(true, this);
             admin.Show();
+            MessageBox.Show("kad");
             //this.Hide();
         }
 

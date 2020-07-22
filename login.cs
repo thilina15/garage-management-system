@@ -21,7 +21,7 @@ namespace myFirstApp
             InitializeComponent();
              isAdmin =b;
             stPage = sPage;
-            stPage.Hide();
+            //stPage.Hide();
 
             if (isAdmin)
             {
