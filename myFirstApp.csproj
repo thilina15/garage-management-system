@@ -99,6 +99,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addingSpareParts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addingSpareParts.Designer.cs">
+      <DependentUpon>addingSpareParts.cs</DependentUpon>
+    </Compile>
     <Compile Include="admin.cs">
       <DependentUpon>sunilMotors.tt</DependentUpon>
     </Compile>
@@ -118,6 +124,18 @@
     <Compile Include="job.cs">
       <DependentUpon>sunilMotors.tt</DependentUpon>
     </Compile>
+    <Compile Include="jobDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="jobDetails.Designer.cs">
+      <DependentUpon>jobDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="jobHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="jobHistory.Designer.cs">
+      <DependentUpon>jobHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="jobitem.cs">
       <DependentUpon>sunilMotors.tt</DependentUpon>
     </Compile>
@@ -130,6 +148,12 @@
     <Compile Include="DB.cs" />
     <Compile Include="mechanist.cs">
       <DependentUpon>sunilMotors.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mechanistPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mechanistPage.Designer.cs">
+      <DependentUpon>mechanistPage.cs</DependentUpon>
     </Compile>
     <Compile Include="startPage.cs">
       <SubType>Form</SubType>
@@ -162,11 +186,23 @@
     <Compile Include="vehicle.cs">
       <DependentUpon>sunilMotors.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="addingSpareParts.resx">
+      <DependentUpon>addingSpareParts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="adminPage.resx">
       <DependentUpon>adminPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="jobDetails.resx">
+      <DependentUpon>jobDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jobHistory.resx">
+      <DependentUpon>jobHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mechanistPage.resx">
+      <DependentUpon>mechanistPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="startPage.resx">
       <DependentUpon>startPage.cs</DependentUpon>

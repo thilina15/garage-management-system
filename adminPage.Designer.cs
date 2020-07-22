@@ -906,7 +906,11 @@
             this.label34.AutoSize = true;
             this.label34.BackColor = System.Drawing.Color.Transparent;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.label34.Location = new System.Drawing.Point(4, 23);
+=======
+            this.label34.Location = new System.Drawing.Point(13, 23);
+>>>>>>> 991dd114014c7cc2d77b76f03c8e388ba17c0485
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(385, 39);
             this.label34.TabIndex = 86;
