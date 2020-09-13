@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8e3e72d105ce42e3aa1a71c80008d016" Name="Diagram1">
+        <EntityTypeShape EntityType="sunilGarageDBModel.admin" Width="1.5" PointX="11.625" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sunilGarageDBModel.customer" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="sunilGarageDBModel.item" Width="1.5" PointX="7.625" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="sunilGarageDBModel.job" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="sunilGarageDBModel.mechanic" Width="1.5" PointX="9.625" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="sunilGarageDBModel.sysdiagram" Width="1.5" PointX="13.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="sunilGarageDBModel.jobItem" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="sunilGarageDBModel.FK_job_customer" ManuallyRouted="false" />
+        <AssociationConnector Association="sunilGarageDBModel.FK_jobItem_item" ManuallyRouted="false" />
+        <AssociationConnector Association="sunilGarageDBModel.FK_jobItem_job" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

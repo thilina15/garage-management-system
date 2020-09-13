@@ -18,18 +18,15 @@ namespace myFirstApp
         public customer()
         {
             this.jobs = new HashSet<job>();
-            this.vehicles = new HashSet<vehicle>();
         }
     
-        public int customerID { get; set; }
+        public string customerNIC { get; set; }
         public string name { get; set; }
         public string address { get; set; }
-        public string mobile { get; set; }
+        public Nullable<int> mobile { get; set; }
         public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<job> jobs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<vehicle> vehicles { get; set; }
     }
 }

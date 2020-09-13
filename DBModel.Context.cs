@@ -13,10 +13,10 @@ namespace myFirstApp
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class sunilGarageEntities : DbContext
+    public partial class sunilGarageDBEntities : DbContext
     {
-        public sunilGarageEntities()
-            : base("name=sunilGarageEntities")
+        public sunilGarageDBEntities()
+            : base("name=sunilGarageDBEntities")
         {
         }
     
@@ -28,9 +28,9 @@ namespace myFirstApp
         public virtual DbSet<admin> admins { get; set; }
         public virtual DbSet<customer> customers { get; set; }
         public virtual DbSet<item> items { get; set; }
-        public virtual DbSet<jobitem> jobitems { get; set; }
         public virtual DbSet<job> jobs { get; set; }
-        public virtual DbSet<mechanist> mechanists { get; set; }
-        public virtual DbSet<vehicle> vehicles { get; set; }
+        public virtual DbSet<mechanic> mechanics { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<jobItem> jobItems { get; set; }
     }
 }

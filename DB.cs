@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
+
 
 namespace myFirstApp
 {
    public static class DB
 
     {
-        static SqlConnection con;
+     // static MySqlConnection con;
+        public static MySqlConnection con;
 
        
         public static void ConnectDB()  //build database connection
@@ -21,11 +23,10 @@ namespace myFirstApp
             try
             {
                 //string conString = @"Data Source=localhost;Initial Catalog=garageManagement;Integrated Security=True";
-                //string conString = @"Data Source=aaasql.database.windows.net;;Initial Catalog=garageManagement;User ID=aaasql;Password=abcd123";
-                string conString = @"Data Source=south.database.windows.net; Initial Catalog = sunilGarage;User ID = thilina; Password =abcd@123;";
-                con = new SqlConnection(conString);
+                string conString = "SERVER=localhost;DATABASE= sunil_garage;UID=root;PASSWORD=1234";
+                //string conString = @"Data Source=south.database.windows.net; Initial Catalog = sunilGarage;User ID = thilina; Password =abcd@123;";
+                con = new MySqlConnection(conString);
                 con.Open();
-                MessageBox.Show("connected");
             }
             catch(Exception e) 
             {
@@ -44,12 +45,12 @@ namespace myFirstApp
         {
             ConnectDB();
 
-            SqlCommand command;
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            MySqlCommand command;
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
             string sql = "";
 
             sql = "insert into admins values(" + adminID + ",'" + userName + "','" + password + "')";
-            command = new SqlCommand(sql, con);
+            command = new MySqlCommand(sql, con);
             adapter.InsertCommand = command;
             adapter.InsertCommand.ExecuteNonQuery();
 
@@ -59,18 +60,42 @@ namespace myFirstApp
             command.Dispose();
         }
 
-        public static SqlDataReader readQuery(string query) //read MySQL query
+        public static void addItem(string name, int stock, int minStock, int price) //add inventory item to database
+        {
+            ConnectDB();
+
+            MySqlCommand command;
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            string sql = "";
+
+            sql = "insert into item (name, stock, minStock, price)values('" + name + "'," + stock + "," + minStock + "," + price + ")";
+            command = new MySqlCommand(sql, con);
+            adapter.InsertCommand = command;
+            adapter.InsertCommand.ExecuteNonQuery();
+
+
+
+
+            command.Dispose();
+        }
+
+
+
+
+
+
+        public static MySqlDataReader readQuery(string query) //read MySQL query
         {
             ConnectDB();
 
             try
             {
-                SqlCommand command;
-                SqlDataReader dataReader;
+                MySqlCommand command;
+                MySqlDataReader dataReader;
 
 
 
-                command = new SqlCommand(query, con);
+                command = new MySqlCommand(query, con);
                 dataReader = command.ExecuteReader();
 
 

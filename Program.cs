@@ -16,7 +16,10 @@ namespace myFirstApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new startPage());
+            //Application.Run(new startPage());
+            //Application.Run(new adminPage());
+            //Application.Run(new mechanistPage());
+            Application.Run(new addingSpareParts());
         }
     }
 }

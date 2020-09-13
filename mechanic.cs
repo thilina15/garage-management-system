@@ -12,10 +12,9 @@ namespace myFirstApp
     using System;
     using System.Collections.Generic;
     
-    public partial class mechanist
+    public partial class mechanic
     {
-        public int mechanistID { get; set; }
-        public string name { get; set; }
+        public int mechanicsID { get; set; }
         public string password { get; set; }
     }
 }
