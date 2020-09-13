@@ -68,7 +68,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1457, 688);
+            this.ClientSize = new System.Drawing.Size(864, 517);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGarage);
             this.Controls.Add(this.btnAdmin);
