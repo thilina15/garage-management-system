@@ -71,8 +71,11 @@ namespace myFirstApp
 
 
                     MessageBox.Show(JIRecord.jobID + " " + JIRecord.itemID + " " + JIRecord.usedQuantity + " " + JIRecord.unitCost + " " + JIRecord.totalCost);
-                    //db.jobItems.Add(JIRecord);
-                   // db.SaveChanges();
+                    //jobRef.jobItems.Add(JIRecord);
+                    //db.Entry(jobRef).State = System.Data.Entity.EntityState.Modified;
+                    //db.SaveChanges();
+                    MessageBox.Show(db.jobItems.FirstOrDefault().totalCost.ToString());
+
                     //fillItemComboBox();
                 }
                // catch(Exception ex)
