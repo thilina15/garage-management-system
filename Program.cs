@@ -19,7 +19,7 @@ namespace myFirstApp
             //Application.Run(new startPage());
             //Application.Run(new adminPage());
             //Application.Run(new mechanistPage());
-            Application.Run(new addingSpareParts());
+            Application.Run(new login());
         }
     }
 }
