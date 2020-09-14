@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="sunilGarageDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="sunilGarageDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="admin">
           <Key>
             <PropertyRef Name="adminID" />
@@ -45,8 +45,6 @@
           <Property Name="serviceCost" Type="int" />
           <Property Name="customerNIC" Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'sunilGarage.dbo.jobItem' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="jobItem">
           <Key>
             <PropertyRef Name="jobID" />
@@ -74,6 +72,14 @@ warning 6002: The table/view 'sunilGarage.dbo.jobItem' does not have a primary k
           <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="isAdmin" Type="bit" Nullable="false" />
         </EntityType>
         <Association Name="FK_job_customer">
           <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
@@ -116,17 +122,10 @@ warning 6002: The table/view 'sunilGarage.dbo.jobItem' does not have a primary k
           <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="item" EntityType="Self.item" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="job" EntityType="Self.job" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="jobItem" EntityType="Self.jobItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mechanics" EntityType="Self.mechanics" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="jobItem" EntityType="Self.jobItem" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [jobItem].[jobID] AS [jobID], 
-    [jobItem].[itemID] AS [itemID], 
-    [jobItem].[usedQuantity] AS [usedQuantity], 
-    [jobItem].[unitCost] AS [unitCost], 
-    [jobItem].[totalCost] AS [totalCost]
-    FROM [dbo].[jobItem] AS [jobItem]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_job_customer" Association="Self.FK_job_customer">
             <End Role="customer" EntitySet="customer" />
             <End Role="job" EntitySet="job" />
@@ -140,8 +139,7 @@ warning 6002: The table/view 'sunilGarage.dbo.jobItem' does not have a primary k
             <End Role="jobItem" EntitySet="jobItem" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="sunilGarageDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -275,7 +273,16 @@ warning 6002: The table/view 'sunilGarage.dbo.jobItem' does not have a primary k
             <End Role="job" EntitySet="jobs" />
             <End Role="jobItem" EntitySet="jobItems" />
           </AssociationSet>
+          <EntitySet Name="users" EntityType="sunilGarageDBModel.user" />
         </EntityContainer>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isAdmin" Type="Boolean" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -353,6 +360,15 @@ warning 6002: The table/view 'sunilGarage.dbo.jobItem' does not have a primary k
                 <ScalarProperty Name="usedQuantity" ColumnName="usedQuantity" />
                 <ScalarProperty Name="unitCost" ColumnName="unitCost" />
                 <ScalarProperty Name="totalCost" ColumnName="totalCost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="sunilGarageDBModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

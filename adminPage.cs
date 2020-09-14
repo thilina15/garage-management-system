@@ -121,6 +121,7 @@ namespace myFirstApp
         private void clearInventoryField()
         {
             txtItemID_Inventory.Text = txtAvalableQuantity_Inventory.Text =txtItemName_Inventory.Text=txtMinQuantity_Inventory.Text=txtUnitPrice_Inventory.Text = null;
+           
             
         }
 
