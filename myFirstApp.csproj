@@ -280,6 +280,7 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\profile.png" />
     <None Include="Resources\Picture123.jpg" />
     <None Include="Resources\images %281%29456.jpg" />
     <None Include="Resources\download123.jpg" />
