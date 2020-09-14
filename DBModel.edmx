@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="sunilGarageDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="adminID" />
+          </Key>
+          <Property Name="adminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="customerNIC" />
+          </Key>
+          <Property Name="customerNIC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="mobile" Type="int" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="item">
+          <Key>
+            <PropertyRef Name="itemID" />
+          </Key>
+          <Property Name="itemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="stock" Type="int" />
+          <Property Name="minStock" Type="int" />
+          <Property Name="price" Type="int" />
+        </EntityType>
+        <EntityType Name="job">
+          <Key>
+            <PropertyRef Name="jobID" />
+          </Key>
+          <Property Name="jobID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vehicle" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="varchar" MaxLength="50" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="specialNote" Type="varchar" MaxLength="50" />
+          <Property Name="itemsCost" Type="int" />
+          <Property Name="serviceCost" Type="int" />
+          <Property Name="customerNIC" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'sunilGarage.dbo.jobItem' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="jobItem">
+          <Key>
+            <PropertyRef Name="jobID" />
+            <PropertyRef Name="itemID" />
+          </Key>
+          <Property Name="jobID" Type="int" Nullable="false" />
+          <Property Name="itemID" Type="int" Nullable="false" />
+          <Property Name="usedQuantity" Type="int" />
+          <Property Name="unitCost" Type="int" />
+          <Property Name="totalCost" Type="int" />
+        </EntityType>
+        <EntityType Name="mechanics">
+          <Key>
+            <PropertyRef Name="mechanicsID" />
+          </Key>
+          <Property Name="mechanicsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_job_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+          <End Role="job" Type="Self.job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="customerNIC" />
+            </Principal>
+            <Dependent Role="job">
+              <PropertyRef Name="customerNIC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_jobItem_item">
+          <End Role="item" Type="Self.item" Multiplicity="1" />
+          <End Role="jobItem" Type="Self.jobItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="itemID" />
+            </Principal>
+            <Dependent Role="jobItem">
+              <PropertyRef Name="itemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_jobItem_job">
+          <End Role="job" Type="Self.job" Multiplicity="1" />
+          <End Role="jobItem" Type="Self.jobItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job">
+              <PropertyRef Name="jobID" />
+            </Principal>
+            <Dependent Role="jobItem">
+              <PropertyRef Name="jobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="sunilGarageDBModelStoreContainer">
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="item" EntityType="Self.item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="job" EntityType="Self.job" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mechanics" EntityType="Self.mechanics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="jobItem" EntityType="Self.jobItem" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [jobItem].[jobID] AS [jobID], 
+    [jobItem].[itemID] AS [itemID], 
+    [jobItem].[usedQuantity] AS [usedQuantity], 
+    [jobItem].[unitCost] AS [unitCost], 
+    [jobItem].[totalCost] AS [totalCost]
+    FROM [dbo].[jobItem] AS [jobItem]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_job_customer" Association="Self.FK_job_customer">
+            <End Role="customer" EntitySet="customer" />
+            <End Role="job" EntitySet="job" />
+          </AssociationSet>
+          <AssociationSet Name="FK_jobItem_item" Association="Self.FK_jobItem_item">
+            <End Role="item" EntitySet="item" />
+            <End Role="jobItem" EntitySet="jobItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_jobItem_job" Association="Self.FK_jobItem_job">
+            <End Role="job" EntitySet="job" />
+            <End Role="jobItem" EntitySet="jobItem" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sunilGarageDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="adminID" />
+          </Key>
+          <Property Name="adminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="customerNIC" />
+          </Key>
+          <Property Name="customerNIC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mobile" Type="Int32" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="jobs" Relationship="Self.FK_job_customer" FromRole="customer" ToRole="job" />
+        </EntityType>
+        <EntityType Name="item">
+          <Key>
+            <PropertyRef Name="itemID" />
+          </Key>
+          <Property Name="itemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="stock" Type="Int32" />
+          <Property Name="minStock" Type="Int32" />
+          <Property Name="price" Type="Int32" />
+          <NavigationProperty Name="jobItems" Relationship="Self.FK_jobItem_item" FromRole="item" ToRole="jobItem" />
+        </EntityType>
+        <EntityType Name="job">
+          <Key>
+            <PropertyRef Name="jobID" />
+          </Key>
+          <Property Name="jobID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vehicle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="specialNote" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="itemsCost" Type="Int32" />
+          <Property Name="serviceCost" Type="Int32" />
+          <Property Name="customerNIC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="customer" Relationship="Self.FK_job_customer" FromRole="job" ToRole="customer" />
+          <NavigationProperty Name="jobItems" Relationship="Self.FK_jobItem_job" FromRole="job" ToRole="jobItem" />
+        </EntityType>
+        <EntityType Name="mechanic">
+          <Key>
+            <PropertyRef Name="mechanicsID" />
+          </Key>
+          <Property Name="mechanicsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="jobItem">
+          <Key>
+            <PropertyRef Name="jobID" />
+            <PropertyRef Name="itemID" />
+          </Key>
+          <Property Name="jobID" Type="Int32" Nullable="false" />
+          <Property Name="itemID" Type="Int32" Nullable="false" />
+          <Property Name="usedQuantity" Type="Int32" />
+          <Property Name="unitCost" Type="Int32" />
+          <Property Name="totalCost" Type="Int32" />
+          <NavigationProperty Name="item" Relationship="Self.FK_jobItem_item" FromRole="jobItem" ToRole="item" />
+          <NavigationProperty Name="job" Relationship="Self.FK_jobItem_job" FromRole="jobItem" ToRole="job" />
+        </EntityType>
+        <Association Name="FK_job_customer">
+          <End Role="customer" Type="Self.customer" Multiplicity="0..1" />
+          <End Role="job" Type="Self.job" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="customer">
+              <PropertyRef Name="customerNIC" />
+            </Principal>
+            <Dependent Role="job">
+              <PropertyRef Name="customerNIC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_jobItem_item">
+          <End Role="item" Type="Self.item" Multiplicity="1" />
+          <End Role="jobItem" Type="Self.jobItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="item">
+              <PropertyRef Name="itemID" />
+            </Principal>
+            <Dependent Role="jobItem">
+              <PropertyRef Name="itemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_jobItem_job">
+          <End Role="job" Type="Self.job" Multiplicity="1" />
+          <End Role="jobItem" Type="Self.jobItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="job">
+              <PropertyRef Name="jobID" />
+            </Principal>
+            <Dependent Role="jobItem">
+              <PropertyRef Name="jobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="sunilGarageDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admins" EntityType="Self.admin" />
+          <EntitySet Name="customers" EntityType="Self.customer" />
+          <EntitySet Name="items" EntityType="Self.item" />
+          <EntitySet Name="jobs" EntityType="Self.job" />
+          <EntitySet Name="mechanics" EntityType="Self.mechanic" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="jobItems" EntityType="Self.jobItem" />
+          <AssociationSet Name="FK_job_customer" Association="Self.FK_job_customer">
+            <End Role="customer" EntitySet="customers" />
+            <End Role="job" EntitySet="jobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_jobItem_item" Association="Self.FK_jobItem_item">
+            <End Role="item" EntitySet="items" />
+            <End Role="jobItem" EntitySet="jobItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_jobItem_job" Association="Self.FK_jobItem_job">
+            <End Role="job" EntitySet="jobs" />
+            <End Role="jobItem" EntitySet="jobItems" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sunilGarageDBModelStoreContainer" CdmEntityContainer="sunilGarageDBEntities">
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="sunilGarageDBModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="adminID" ColumnName="adminID" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="sunilGarageDBModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="customerNIC" ColumnName="customerNIC" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="items">
+            <EntityTypeMapping TypeName="sunilGarageDBModel.item">
+              <MappingFragment StoreEntitySet="item">
+                <ScalarProperty Name="itemID" ColumnName="itemID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="stock" ColumnName="stock" />
+                <ScalarProperty Name="minStock" ColumnName="minStock" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobs">
+            <EntityTypeMapping TypeName="sunilGarageDBModel.job">
+              <MappingFragment StoreEntitySet="job">
+                <ScalarProperty Name="jobID" ColumnName="jobID" />
+                <ScalarProperty Name="vehicle" ColumnName="vehicle" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="specialNote" ColumnName="specialNote" />
+                <ScalarProperty Name="itemsCost" ColumnName="itemsCost" />
+                <ScalarProperty Name="serviceCost" ColumnName="serviceCost" />
+                <ScalarProperty Name="customerNIC" ColumnName="customerNIC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mechanics">
+            <EntityTypeMapping TypeName="sunilGarageDBModel.mechanic">
+              <MappingFragment StoreEntitySet="mechanics">
+                <ScalarProperty Name="mechanicsID" ColumnName="mechanicsID" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="sunilGarageDBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="jobItems">
+            <EntityTypeMapping TypeName="sunilGarageDBModel.jobItem">
+              <MappingFragment StoreEntitySet="jobItem">
+                <ScalarProperty Name="jobID" ColumnName="jobID" />
+                <ScalarProperty Name="itemID" ColumnName="itemID" />
+                <ScalarProperty Name="usedQuantity" ColumnName="usedQuantity" />
+                <ScalarProperty Name="unitCost" ColumnName="unitCost" />
+                <ScalarProperty Name="totalCost" ColumnName="totalCost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

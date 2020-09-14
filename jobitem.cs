@@ -12,11 +12,13 @@ namespace myFirstApp
     using System;
     using System.Collections.Generic;
     
-    public partial class jobitem
+    public partial class jobItem
     {
-        public int jobs_jobID { get; set; }
-        public int items_itemID { get; set; }
+        public int jobID { get; set; }
+        public int itemID { get; set; }
         public Nullable<int> usedQuantity { get; set; }
+        public Nullable<int> unitCost { get; set; }
+        public Nullable<int> totalCost { get; set; }
     
         public virtual item item { get; set; }
         public virtual job job { get; set; }

@@ -17,18 +17,20 @@ namespace myFirstApp
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public job()
         {
-            this.jobitems = new HashSet<jobitem>();
+            this.jobItems = new HashSet<jobItem>();
         }
     
         public int jobID { get; set; }
+        public string vehicle { get; set; }
         public string description { get; set; }
-        public string cost { get; set; }
         public string status { get; set; }
-        public int customer_customerID { get; set; }
-        public string vehicle_vehicleID { get; set; }
+        public string specialNote { get; set; }
+        public Nullable<int> itemsCost { get; set; }
+        public Nullable<int> serviceCost { get; set; }
+        public string customerNIC { get; set; }
     
         public virtual customer customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<jobitem> jobitems { get; set; }
+        public virtual ICollection<jobItem> jobItems { get; set; }
     }
 }

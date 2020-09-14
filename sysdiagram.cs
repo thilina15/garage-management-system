@@ -12,13 +12,12 @@ namespace myFirstApp
     using System;
     using System.Collections.Generic;
     
-    public partial class vehicle
+    public partial class sysdiagram
     {
-        public string vehicleID { get; set; }
-        public string manufcturer { get; set; }
-        public string YOM { get; set; }
-        public int customer_customerID { get; set; }
-    
-        public virtual customer customer { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

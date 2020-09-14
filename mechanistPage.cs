@@ -17,9 +17,11 @@ namespace myFirstApp
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void listView1_Click(object sender, EventArgs e)
         {
-
+            jobDetails jb = new jobDetails();
+            MessageBox.Show("clidked");
+            jb.Show();
         }
     }
 }
