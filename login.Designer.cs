@@ -42,6 +42,7 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuMaterialTextbox2 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuMaterialTextbox1 = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -56,6 +57,8 @@
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
 =======
 >>>>>>> parent of af6a075... update
+=======
+>>>>>>> parent of af6a075... update
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -66,8 +69,12 @@
             this.bunifuGradientPanel1.SuspendLayout();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox)).BeginInit();
 >>>>>>> af6a075e99790b5fcdaf0f5b000d4d1a6934226f
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+>>>>>>> parent of af6a075... update
 =======
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
 >>>>>>> parent of af6a075... update
@@ -205,8 +212,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.bunifuGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel1_Paint);
 =======
+=======
+>>>>>>> parent of af6a075... update
 =======
 >>>>>>> parent of af6a075... update
             this.bunifuGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel1_Paint);
@@ -288,6 +298,9 @@
             this.bunifuMaterialTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.bunifuMaterialTextbox2.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox2_OnValueChanged);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of af6a075... update
+=======
 >>>>>>> parent of af6a075... update
 =======
 >>>>>>> parent of af6a075... update
@@ -428,6 +441,7 @@
             this.bunifuThinButton21.TabIndex = 14;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.bunifuThinButton21.Click += new System.EventHandler(this.bunifuThinButton21_Click);
             // 
             // bunifuTxt_Password
@@ -507,6 +521,8 @@
 >>>>>>> parent of af6a075... update
 =======
 >>>>>>> parent of af6a075... update
+=======
+>>>>>>> parent of af6a075... update
             // 
             // login
             // 
@@ -534,6 +550,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.Load += new System.EventHandler(this.login_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
@@ -545,6 +562,13 @@
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox)).EndInit();
 >>>>>>> af6a075e99790b5fcdaf0f5b000d4d1a6934226f
+=======
+            this.Load += new System.EventHandler(this.login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.loginPictureBox)).EndInit();
+            this.bunifuGradientPanel1.ResumeLayout(false);
+            this.bunifuGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+>>>>>>> parent of af6a075... update
 =======
             this.Load += new System.EventHandler(this.login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.loginPictureBox)).EndInit();

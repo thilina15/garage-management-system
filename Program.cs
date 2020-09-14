@@ -21,12 +21,17 @@ namespace myFirstApp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             //Application.Run(new mechanistPage());
             Application.Run(new addingSpareParts());
 =======
             Application.Run(new mechanistPage());
             
 >>>>>>> af6a075e99790b5fcdaf0f5b000d4d1a6934226f
+=======
+            //Application.Run(new mechanistPage());
+            Application.Run(new login());
+>>>>>>> parent of af6a075... update
 =======
             //Application.Run(new mechanistPage());
             Application.Run(new login());

@@ -45,10 +45,13 @@
             this.button1 = new System.Windows.Forms.Button();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.panel1.SuspendLayout();
 //=======
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
 //>>>>>>> af6a075e99790b5fcdaf0f5b000d4d1a6934226f
+=======
+>>>>>>> parent of af6a075... update
 =======
 >>>>>>> parent of af6a075... update
 =======
@@ -164,6 +167,7 @@
             // 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //<<<<<<< Updated upstream
             this.btnAdmin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAdmin.Location = new System.Drawing.Point(71, 273);
@@ -207,6 +211,9 @@
 =======
             this.button1.Location = new System.Drawing.Point(331, 452);
 >>>>>>> parent of af6a075... update
+=======
+            this.button1.Location = new System.Drawing.Point(331, 452);
+>>>>>>> parent of af6a075... update
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(237, 23);
             this.button1.TabIndex = 10;
@@ -215,7 +222,10 @@
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //>>>>>>> Stashed changes
+=======
+>>>>>>> parent of af6a075... update
 =======
 >>>>>>> parent of af6a075... update
 =======
@@ -256,7 +266,10 @@
         private System.Windows.Forms.Button button1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        // private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+=======
+>>>>>>> parent of af6a075... update
 =======
 >>>>>>> parent of af6a075... update
 =======
