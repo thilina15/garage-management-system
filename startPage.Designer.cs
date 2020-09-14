@@ -43,10 +43,13 @@
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnGarage = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.panel1.SuspendLayout();
 //=======
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
 //>>>>>>> af6a075e99790b5fcdaf0f5b000d4d1a6934226f
+=======
+>>>>>>> parent of af6a075... update
             this.SuspendLayout();
             // 
             // panel1
@@ -156,6 +159,7 @@
             // 
             // button1
             // 
+<<<<<<< HEAD
 //<<<<<<< Updated upstream
             this.btnAdmin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAdmin.Location = new System.Drawing.Point(71, 273);
@@ -193,13 +197,19 @@
 //=======
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Location = new System.Drawing.Point(48, 438);
+=======
+            this.button1.Location = new System.Drawing.Point(331, 452);
+>>>>>>> parent of af6a075... update
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(237, 23);
             this.button1.TabIndex = 10;
             this.button1.Text = "test connection";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+<<<<<<< HEAD
 //>>>>>>> Stashed changes
+=======
+>>>>>>> parent of af6a075... update
             // 
             // startPage
             // 
@@ -212,7 +222,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 //=======
             this.ClientSize = new System.Drawing.Size(864, 517);
-            this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGarage);
             this.Controls.Add(this.btnAdmin);
@@ -235,7 +244,10 @@
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnGarage;
         private System.Windows.Forms.Button button1;
+<<<<<<< HEAD
        // private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+=======
+>>>>>>> parent of af6a075... update
     }
 }
 

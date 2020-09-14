@@ -15,7 +15,6 @@
         <AssociationConnector Association="sunilGarageDBModel.FK_job_customer" ManuallyRouted="false" />
         <AssociationConnector Association="sunilGarageDBModel.FK_jobItem_item" ManuallyRouted="false" />
         <AssociationConnector Association="sunilGarageDBModel.FK_jobItem_job" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="sunilGarageDBModel.user" Width="1.5" PointX="0.75" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

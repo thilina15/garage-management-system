@@ -32,6 +32,5 @@ namespace myFirstApp
         public virtual DbSet<mechanic> mechanics { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<jobItem> jobItems { get; set; }
-        public virtual DbSet<user> users { get; set; }
     }
 }
