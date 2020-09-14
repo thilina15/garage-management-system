@@ -35,9 +35,13 @@
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.button1 = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.btnGarage = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+=======
+            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+>>>>>>> af6a075e99790b5fcdaf0f5b000d4d1a6934226f
             this.SuspendLayout();
             // 
             // panel1
@@ -133,6 +137,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+<<<<<<< HEAD
             // btnGarage
             // 
             this.btnGarage.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -154,15 +159,48 @@
             this.btnAdmin.Text = "login admin";
             this.btnAdmin.UseVisualStyleBackColor = true;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+=======
+            // bunifuThinButton21
+            // 
+            this.bunifuThinButton21.ActiveBorderThickness = 1;
+            this.bunifuThinButton21.ActiveCornerRadius = 20;
+            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
+            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuThinButton21.ButtonText = "ThinButton";
+            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleBorderThickness = 1;
+            this.bunifuThinButton21.IdleCornerRadius = 20;
+            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.White;
+            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.bunifuThinButton21.Location = new System.Drawing.Point(319, 277);
+            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
+            this.bunifuThinButton21.Name = "bunifuThinButton21";
+            this.bunifuThinButton21.Size = new System.Drawing.Size(181, 41);
+            this.bunifuThinButton21.TabIndex = 11;
+            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+>>>>>>> af6a075e99790b5fcdaf0f5b000d4d1a6934226f
             // 
             // startPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.BackgroundImage = global::myFirstApp.Properties.Resources.Picture123;
             this.ClientSize = new System.Drawing.Size(752, 523);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+=======
+            this.ClientSize = new System.Drawing.Size(864, 517);
+            this.Controls.Add(this.bunifuThinButton21);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGarage);
+            this.Controls.Add(this.btnAdmin);
+>>>>>>> af6a075e99790b5fcdaf0f5b000d4d1a6934226f
             this.Name = "startPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome Page";
@@ -181,6 +219,7 @@
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnGarage;
         private System.Windows.Forms.Button button1;
+        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
     }
 }
 

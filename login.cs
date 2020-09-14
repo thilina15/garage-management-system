@@ -25,12 +25,12 @@ namespace myFirstApp
 
             if (isAdmin)
             {
-                lableName.Text = "    ADMIN";
+                bunifuLable_topic.Text = "    ADMIN";
             }
             else
             {
-                lableName.Text = "MECHANIST";
-                loginPictureBox.Image = Properties.Resources.download1;
+                bunifuLable_topic.Text = "MECHANIST";
+                bunifuPictureBox.Image = Properties.Resources.download1;
 
                 
             }
@@ -39,44 +39,7 @@ namespace myFirstApp
            
         }
 
-        private void button1_Click(object sender, EventArgs e)  //login button click
-        {
-            int ID=0;
-            string password = textPassword.Text;
-
-            try {
-                ID = int.Parse(txtUserName.Text);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
-            
-
-            if (isAdmin) //check admin details
-            {
-                MySqlDataReader loginDetails =   DB.readQuery("select adminID, password from admin where adminID = "+ID+" and password= '"+password+"'");
-                if (loginDetails.HasRows)
-                {
-                    MessageBox.Show("user found");
-                    adminPage ap = new adminPage();
-                    this.Close();
-                    ap.Show();
-                }
-                else
-                {
-                    MessageBox.Show("user not found");
-                }
-            }
-            else //check garage details
-            {
-                mechanistPage mp = new mechanistPage();
-                mp.Show();
-            }
-
-
-        }
+        
 
         private void button2_Click(object sender, EventArgs e)//back
         {
@@ -97,59 +60,49 @@ namespace myFirstApp
             }
         }
 
-        private void login_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void lableName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuTextbox1_OnTextChange(object sender, EventArgs e)
-        {
-
-        }
-
+        //loggin button clicked
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
+            int ID = 0;
+            string password = bunifuTxt_Password.Text;
 
-        }
+            try
+            {
+                ID = int.Parse(bunifuTxt_ID.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-        private void bunifuCustomLabel1_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
-        {
+            if (isAdmin) //check admin details
+            {
+                using (sunilGarageDBEntities db = new sunilGarageDBEntities())
+                {
+                    int rows = db.admins.Where(x => x.adminID == ID ^ x.password == password).Count();
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("user found");
+                        adminPage ap = new adminPage();
+                        this.Close();
+                        ap.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("user not found");
+                    }
 
-        }
+                }
 
-        private void bunifuCustomLabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuCustomLabel3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void bunifuMaterialTextbox2_OnValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void bunifuMaterialTextbox1_OnValueChanged(object sender, EventArgs e)
-        {
-
+            }
+            else //check garage details
+            {
+                mechanistPage mp = new mechanistPage();
+                mp.Show();
+            }
         }
     }
 }
