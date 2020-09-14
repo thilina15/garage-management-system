@@ -32,21 +32,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(startPage));
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuThinButton22 = new Bunifu.Framework.UI.BunifuThinButton2();
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
             this.button1 = new System.Windows.Forms.Button();
-<<<<<<< HEAD
+//<<<<<<< HEAD
             this.btnGarage = new System.Windows.Forms.Button();
-=======
+//=======
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnGarage = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-=======
+//=======
             this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
->>>>>>> af6a075e99790b5fcdaf0f5b000d4d1a6934226f
+//>>>>>>> af6a075e99790b5fcdaf0f5b000d4d1a6934226f
             this.SuspendLayout();
             // 
             // panel1
@@ -142,7 +142,7 @@
             this.btnAdmin.UseVisualStyleBackColor = true;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
-<<<<<<< HEAD
+//<<<<<<< HEAD
             // btnGarage
             // 
             this.btnGarage.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -156,7 +156,7 @@
             // 
             // button1
             // 
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
             this.btnAdmin.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAdmin.Location = new System.Drawing.Point(71, 273);
             this.btnAdmin.Name = "btnAdmin";
@@ -165,7 +165,7 @@
             this.btnAdmin.Text = "login admin";
             this.btnAdmin.UseVisualStyleBackColor = true;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-=======
+//=======
             // bunifuThinButton21
             // 
             this.bunifuThinButton21.ActiveBorderThickness = 1;
@@ -189,8 +189,8 @@
             this.bunifuThinButton21.Size = new System.Drawing.Size(181, 41);
             this.bunifuThinButton21.TabIndex = 11;
             this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
->>>>>>> af6a075e99790b5fcdaf0f5b000d4d1a6934226f
-=======
+//>>>>>>> af6a075e99790b5fcdaf0f5b000d4d1a6934226f
+//=======
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Location = new System.Drawing.Point(48, 438);
             this.button1.Name = "button1";
@@ -199,24 +199,24 @@
             this.button1.Text = "test connection";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
             // 
             // startPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
+//<<<<<<< HEAD
             this.BackgroundImage = global::myFirstApp.Properties.Resources.Picture123;
             this.ClientSize = new System.Drawing.Size(752, 523);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-=======
+//=======
             this.ClientSize = new System.Drawing.Size(864, 517);
             this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGarage);
             this.Controls.Add(this.btnAdmin);
->>>>>>> af6a075e99790b5fcdaf0f5b000d4d1a6934226f
+//>>>>>>> af6a075e99790b5fcdaf0f5b000d4d1a6934226f
             this.Name = "startPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome Page";
@@ -235,7 +235,7 @@
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnGarage;
         private System.Windows.Forms.Button button1;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+       // private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
     }
 }
 
