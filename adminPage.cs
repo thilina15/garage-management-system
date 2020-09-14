@@ -365,6 +365,16 @@ namespace myFirstApp
         {
             makeJob();
         }
+
+        private void panel3_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
    

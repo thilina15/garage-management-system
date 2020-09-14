@@ -42,9 +42,26 @@ namespace myFirstApp
             
 
         }
-        
 
-      
+        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void startPage_Load(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void bunifuCustomLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
     
