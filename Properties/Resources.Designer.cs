@@ -63,6 +63,36 @@ namespace myFirstApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _03_9b59a29c5402c28d508f05e0b03a98cb {
+            get {
+                object obj = ResourceManager.GetObject("03_9b59a29c5402c28d508f05e0b03a98cb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _139_1392987_car_repair_garage_repair_icon {
+            get {
+                object obj = ResourceManager.GetObject("139-1392987_car-repair-garage-repair-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _161_1610147_miaw_wan_transmission_service_sdn_bhd_car_service {
+            get {
+                object obj = ResourceManager.GetObject("161-1610147_miaw-wan-transmission-service-sdn-bhd-car-service", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _240_F_68670247_EclWAJNOCufkhMFNLTe44wiCZTGnavcf {
             get {
                 object obj = ResourceManager.GetObject("240_F_68670247_EclWAJNOCufkhMFNLTe44wiCZTGnavcf", resourceCulture);
@@ -73,9 +103,29 @@ namespace myFirstApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _533_5331030_garage_free_automatic_garage_gate_opener_icons_hd {
+            get {
+                object obj = ResourceManager.GetObject("533-5331030_garage-free-automatic-garage-gate-opener-icons-hd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add {
             get {
                 object obj = ResourceManager.GetObject("add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap car_maintenance_10_512 {
+            get {
+                object obj = ResourceManager.GetObject("car_maintenance_10-512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +173,49 @@ namespace myFirstApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download2 {
+            get {
+                object obj = ResourceManager.GetObject("download2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fM8DVq {
+            get {
+                object obj = ResourceManager.GetObject("fM8DVq", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Gallery_8 {
             get {
                 object obj = ResourceManager.GetObject("Gallery 8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap garage_icon_png_29363_free_icons_library_png_car_in_garage_512_474 {
+            get {
+                object obj = ResourceManager.GetObject("garage-icon-png-29363-free-icons-library-png-car-in-garage-512_474", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap garazh_mashiny_fon {
+            get {
+                object obj = ResourceManager.GetObject("garazh-mashiny-fon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +236,36 @@ namespace myFirstApp.Properties {
         internal static System.Drawing.Bitmap images__1_456 {
             get {
                 object obj = ResourceManager.GetObject("images (1)456", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images1 {
+            get {
+                object obj = ResourceManager.GetObject("images1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kilian_bg {
+            get {
+                object obj = ResourceManager.GetObject("kilian-bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paig_lyons_paig_lyons_garage_artstation03 {
+            get {
+                object obj = ResourceManager.GetObject("paig-lyons-paig-lyons-garage-artstation03", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +296,16 @@ namespace myFirstApp.Properties {
         internal static System.Drawing.Bitmap repair1 {
             get {
                 object obj = ResourceManager.GetObject("repair1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unnamed {
+            get {
+                object obj = ResourceManager.GetObject("unnamed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

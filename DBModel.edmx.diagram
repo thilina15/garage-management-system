@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8e3e72d105ce42e3aa1a71c80008d016" Name="Diagram1">
+      <Diagram DiagramId="8e3e72d105ce42e3aa1a71c80008d016" Name="Diagram1" ZoomLevel="131">
         <EntityTypeShape EntityType="sunilGarageDBModel.admin" Width="1.5" PointX="11.625" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="sunilGarageDBModel.customer" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="sunilGarageDBModel.item" Width="1.5" PointX="7.625" PointY="4" IsExpanded="true" />
@@ -15,6 +15,7 @@
         <AssociationConnector Association="sunilGarageDBModel.FK_job_customer" ManuallyRouted="false" />
         <AssociationConnector Association="sunilGarageDBModel.FK_jobItem_item" ManuallyRouted="false" />
         <AssociationConnector Association="sunilGarageDBModel.FK_jobItem_job" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="sunilGarageDBModel.user" Width="1.5" PointX="0.75" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

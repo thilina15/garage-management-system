@@ -21,31 +21,28 @@ namespace myFirstApp
             InitializeComponent();
         }
 
-        private void btnAdmin_Click(object sender, EventArgs e)
+        
+        //admin login
+        private void bunifuThinButton21_Click_1(object sender, EventArgs e)
         {
-            login admin = new login(true, this);
-            admin.Show();
-            MessageBox.Show("kad");
-            //this.Hide();
+            login ad = new login(true,this);
+            this.Hide();
+            ad.Show();
         }
 
-        private void btnGarage_Click(object sender, EventArgs e)
+        //mechanic login
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-            login admin = new login(false, this);
-            admin.Show();
-            //this.Hide();
+            login ad = new login(false, this);
+            this.Hide();
+            ad.Show();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            DB.ConnectDB();
-            
 
-        }
-
-        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        //exit button
+        private void bunifuThinButton23_Click(object sender, EventArgs e)
         {
-            
+            Application.Exit();
         }
     }
     

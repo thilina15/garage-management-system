@@ -117,4 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="jobID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="newJobDescription.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="newState.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="goingJobID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="goingDescription.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="goingState.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="holdJobID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="holdDescription.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="holdState.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bunifuThinButton22.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHYAAAAvCAYAAAA2Jj4uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALZSURBVHhe7Zs/aFNRFMYzZsyY0TFjx4wdHTtmzJixY0a3
+        jB07ZuyYMWNExIIU4yBGRCwiEkQkiEgQMdfv3PMlvSG3tlVIbvT7wUfac9+5hfx4//rerQghhBBCCCHE
+        f0wIoYa0F4vFABkhl/hdbAl831N+70Okg1Kdav4MTFDFRL04uygKeOnjo0ZVtweNTWTi04gSgR/bk+9T
+        2c1g42P2rjg//xI6ndfh8PB5ODi4CJXKQ2VLaTSexu+93X4VBoNPNHIFfPWp7nqwUZPbR2azH3HC3B9U
+        dpNm81m4vJzTkANvHSrcBON2Tl0dfm0vrdefZCdXdpta7XE4O/tIU1Gsmb5HletgcHWhZHuqpJadavVR
+        GI+/0liUO6LKK1Cv+7Cjw+9+xM6/8/lPWoty1y+mULD7o8hoNMtOopSZk5P3NJe5kEJhyDHtrXsWu5ha
+        Ao8TKnVQGHNMtzN7mBQqdSB2xroumvYwdrG7hEod1iK5RqXspFCpw1ok16iUnRQqdViL5BqVspNCpQ5r
+        kVyjUnZSqNRhLZJrVMpOCpU6rEVyjUrZSaFSh7VIrlEpOylU6rAWyTUqZSeFSh3WIrlGpeykUKnDWiTX
+        qJSdFCp1Fv6gNmIPcXPNSrm59l+K9lSA9fiML9eslJv0mSyVOhA7Yj0cHb3YaFTKjT20WQKPUyp1UHvg
+        QyH0+9PsBEqZOT5+Q3NR7JBKHdQaPhTibq3D8X7E3ntK31iE2M23FVE853h8Q9GacpMp5cSOrkvsMIyP
+        zeUfKDYwuNLf673LTqaUkVbrJU05cNeiyk0w3vXNnOHws96oKCx2JD09/UBDDqTeajXA6pBs2D1St/tW
+        590dx3Ywe9FwMvlGMw582erHmxdoYaPfrrKbTr/zJ7EN7OIovU9NgaczfNxt1R2atOKuUODFXj5sU9Xd
+        QXPVJsBEtuh5fSWQ2DpwYAugbTXk3y1+FkIIIYQQ4h+nUvkFUJ1IbO2+T0QAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

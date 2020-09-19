@@ -33,5 +33,15 @@ namespace myFirstApp.Properties {
                 return ((string)(this["sunilGarageConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=sunilGarage;Integrated Security=True")]
+        public string sunilGarageConnectionString1 {
+            get {
+                return ((string)(this["sunilGarageConnectionString1"]));
+            }
+        }
     }
 }

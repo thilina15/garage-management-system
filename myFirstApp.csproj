@@ -63,9 +63,14 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>C:\Users\THILINA\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -90,6 +95,8 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -119,6 +126,12 @@
     <Compile Include="adminPage.Designer.cs">
       <DependentUpon>adminPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="customer.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -137,6 +150,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="invoiceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>invoiceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="item.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -148,6 +167,12 @@
     </Compile>
     <Compile Include="jobDetails.Designer.cs">
       <DependentUpon>jobDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="jobDetailsForAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="jobDetailsForAdmin.Designer.cs">
+      <DependentUpon>jobDetailsForAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="jobHistory.cs">
       <SubType>Form</SubType>
@@ -174,6 +199,18 @@
     <Compile Include="mechanistPage.Designer.cs">
       <DependentUpon>mechanistPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="monthlyReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>monthlyReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="report.Designer.cs">
+      <DependentUpon>report.cs</DependentUpon>
+    </Compile>
     <Compile Include="startPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,7 +220,16 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="state.cs" />
+    <Compile Include="sunilGarageDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>sunilGarageDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="sysdiagram.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usedItemStruct.cs" />
+    <Compile Include="user.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="addingSpareParts.resx">
@@ -192,8 +238,19 @@
     <EmbeddedResource Include="adminPage.resx">
       <DependentUpon>adminPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="invoiceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>invoiceReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="jobDetails.resx">
       <DependentUpon>jobDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jobDetailsForAdmin.resx">
+      <DependentUpon>jobDetailsForAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="jobHistory.resx">
       <DependentUpon>jobHistory.cs</DependentUpon>
@@ -203,6 +260,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mechanistPage.resx">
       <DependentUpon>mechanistPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="monthlyReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>monthlyReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report.resx">
+      <DependentUpon>report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="startPage.resx">
       <DependentUpon>startPage.cs</DependentUpon>
@@ -235,6 +299,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="sunilGarageDataSet.xsc">
+      <DependentUpon>sunilGarageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="sunilGarageDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>sunilGarageDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="sunilGarageDataSet.xss">
+      <DependentUpon>sunilGarageDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -262,6 +337,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Gallery 8.jpg" />
@@ -280,6 +356,20 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\unnamed.jpg" />
+    <None Include="Resources\paig-lyons-paig-lyons-garage-artstation03.jpg" />
+    <None Include="Resources\kilian-bg.jpg" />
+    <None Include="Resources\images.png" />
+    <None Include="Resources\garazh-mashiny-fon.jpg" />
+    <None Include="Resources\garage-icon-png-29363-free-icons-library-png-car-in-garage-512_474.jpg" />
+    <None Include="Resources\fM8DVq.jpg" />
+    <None Include="Resources\download1.png" />
+    <None Include="Resources\car_maintenance_10-512.png" />
+    <None Include="Resources\533-5331030_garage-free-automatic-garage-gate-opener-icons-hd.png" />
+    <None Include="Resources\161-1610147_miaw-wan-transmission-service-sdn-bhd-car-service.png" />
+    <None Include="Resources\139-1392987_car-repair-garage-repair-icon.png" />
+    <None Include="Resources\03_9b59a29c5402c28d508f05e0b03a98cb.jpg" />
+    <None Include="Resources\Image1.png" />
     <None Include="Resources\profile.png" />
     <None Include="Resources\Picture123.jpg" />
     <None Include="Resources\images %281%29456.jpg" />

@@ -14,18 +14,21 @@ namespace myFirstApp
 {
     public partial class adminPage : Form
     {
+        startPage stPage;
         
-        public adminPage()
+        public adminPage(startPage st )
         {
-            
-
+            stPage = st;
             InitializeComponent();
+            checkInventoryWarnings();
+            fillJobSearchComboBox();
+            timer1.Start();
 
         }
 
         private void adminPage_Load(object sender, EventArgs e)
         {
-           // DB.ConnectDB();
+           
             
             //set inventory grid font details
             dgvInventory.DefaultCellStyle.Font = new Font("Tahoma", 15);
@@ -36,8 +39,34 @@ namespace myFirstApp
 
             //load customers to reg table
             fillCustomerReg();
+
+            //fill ongoing repairs
+            fillOngoingRepairs();
+
+            //set ongoing repairs grid fonts
+            bunifu_DGV_ongoingRepairs.DefaultCellStyle.Font = new Font("Thoma", 10);
+            bunifu_DGV_ongoingRepairs.ColumnHeadersHeight = 50;
+
+            //inventory warning table
+            dgvInventoryWarnings.DefaultCellStyle.Font = new Font("Thoma", 10);
+
+            //user table
+            dgvUser.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            dgvUser.ColumnHeadersDefaultCellStyle.Font = new Font("Thoma", 15);
+
         }
 
+        //check inventory warnings
+        private void checkInventoryWarnings()
+        {
+            dgvInventoryWarnings.AutoGenerateColumns = false;
+            using(sunilGarageDBEntities db=new sunilGarageDBEntities())
+            {
+                item[] warnings = db.items.Where(x => x.stock < x.minStock).ToArray();
+                dgvInventoryWarnings.DataSource = warnings;
+
+            }
+        }
         
         private void tabPage3_Click(object sender, EventArgs e)
         {
@@ -52,25 +81,14 @@ namespace myFirstApp
             fillInventory();
             fillCustomerComboBox();
             fillNextJobID();
+            fillOngoingRepairs();
+            fillNextUserID();
+            fillUserTable();
+            fillJobSearchComboBox();
         }
 
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
 
 
@@ -217,7 +235,7 @@ namespace myFirstApp
         }
 
 
-        //customer registration................................................................
+        //customer registration...........................................................................................................................
 
         //add customer
         private void button12_Click(object sender, EventArgs e)
@@ -303,7 +321,7 @@ namespace myFirstApp
             }
         }
 
-        // customer NIC select comboBox selection changed..................
+        // customer NIC select comboBox selection changed
         private void comboBoxCusNIC_SelectedIndexChanged(object sender, EventArgs e)
         {
             customer cus = new customer();
@@ -331,6 +349,9 @@ namespace myFirstApp
                     jb.vehicle = MTB_VehicleID_JobSheet.Text;
                     jb.status = state.created.ToString();
                     jb.customer = db.customers.Where(x => x.customerNIC == comboBoxCusNIC.SelectedItem.ToString()).FirstOrDefault();
+                    jb.specialNote = "";
+                    jb.date = null;
+                    jb.serviceCost = 0;
 
                     db.jobs.Add(jb);
                     db.SaveChanges();
@@ -365,6 +386,254 @@ namespace myFirstApp
         {
             makeJob();
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        //fill ongoing repairs.................
+        private void fillOngoingRepairs()
+        {
+            bunifu_DGV_ongoingRepairs.AutoGenerateColumns = false;
+            using(sunilGarageDBEntities db=new sunilGarageDBEntities())
+            {
+                bunifu_DGV_ongoingRepairs.DataSource = db.jobs.Where(x => x.status != state.complete.ToString()).ToList<job>();
+            }
+        }
+
+        //ongoing repairs double click
+        private void bunifu_DGV_ongoingRepairs_DoubleClick(object sender, EventArgs e)
+        {
+            if (bunifu_DGV_ongoingRepairs.CurrentRow.Index != -1)
+            {
+                job jb = new job();
+                jb.jobID = Convert.ToInt32(bunifu_DGV_ongoingRepairs.CurrentRow.Cells["jobID"].Value);
+                using (sunilGarageDBEntities db = new sunilGarageDBEntities())
+                {
+                    jb = db.jobs.Where(x => x.jobID == jb.jobID).FirstOrDefault();
+                    jobDetailsForAdmin jdfa = new jobDetailsForAdmin(jb);
+                    jdfa.Show();
+                }
+            }
+        }
+
+        //fill job search combo box
+        private void fillJobSearchComboBox()
+        {
+            using (sunilGarageDBEntities db = new sunilGarageDBEntities())
+            {
+                comboBoxJobs.Items.Clear();
+                //get only completed jobs
+                job[] jb = db.jobs.Where(x=>x.status==state.complete.ToString()).ToArray();
+                List<string> vehicleList = new List<string>();
+                foreach (job x in jb)
+                {
+                    vehicleList.Add(x.vehicle);
+                }
+
+                //removing duplicates (completed vehicle list)
+                List<string> finalList = vehicleList.Distinct().ToList();
+
+                //adding to combo box
+                foreach(string x in finalList)
+                {
+                    comboBoxJobs.Items.Add(x);
+                }
+
+            }
+        }
+
+
+     
+
+        //search job by vehicle button
+        private void bunifuThinButton214_Click(object sender, EventArgs e)
+        {
+            string vehicleID = comboBoxJobs.SelectedItem.ToString();
+            using(sunilGarageDBEntities db=new sunilGarageDBEntities())
+            {
+                job j = db.jobs.Where(x => x.vehicle == vehicleID && x.status == state.complete.ToString()).FirstOrDefault();
+                jobHistory jh = new jobHistory(true, j);
+                jh.Show();
+            }
+
+        }
+
+        // user registration details.........................................................................................................................................
+        //user add button
+        private void bunifuThinButton27_Click(object sender, EventArgs e)
+        {
+            using(sunilGarageDBEntities db=new sunilGarageDBEntities())
+            {
+                string name = txtUserName.Text;
+                string password = txtUserPassword.Text;
+                bool admin = radioAdmin.Checked;
+
+                user u = new user();
+                u.isAdmin = admin;
+                u.name = name;
+                u.password = password;
+                db.users.Add(u);
+                db.SaveChanges();
+                MessageBox.Show("user added done");
+                clearUserTextFields();
+            }
+            
+        }
+
+        //fill next user id
+        private void fillNextUserID()
+        {
+            using(sunilGarageDBEntities db=new sunilGarageDBEntities())
+            {
+                int nextID = db.users.Max(x => x.ID) + 1;
+                txtUserID.Text = nextID.ToString();
+            }
+        }
+
+        //clear user text fields
+        private void clearUserTextFields()
+        {
+            txtUserName.Text = "";
+            txtUserPassword.Text = "";
+            fillNextUserID();
+            fillUserTable();
+        }
+
+        //fill user data table
+        private void fillUserTable()
+        {
+            using(sunilGarageDBEntities db=new sunilGarageDBEntities())
+            {
+                user[] userList = db.users.ToArray();
+                dgvUser.DataSource = userList;
+            }
+        }
+
+        //user table row click
+        private void dgvUser_DoubleClick(object sender, EventArgs e)
+        {
+            user u = new user();
+            if (dgvUser.CurrentRow.Index != -1)
+            {
+
+                u.ID = Convert.ToInt32(dgvUser.CurrentRow.Cells["userID"].Value);
+                using (sunilGarageDBEntities db = new sunilGarageDBEntities())
+                {
+                    u = db.users.Where(x => x.ID == u.ID).FirstOrDefault();
+                    txtUserID.Text = u.ID.ToString();
+                    txtUserName.Text = u.name;
+                    txtUserPassword.Text = u.password;
+                    if (u.isAdmin)
+                    {
+                        radioAdmin.Checked = true;
+                    }
+                    else
+                    {
+                        radioMechanic.Checked = true;
+                    }
+                }
+
+            }
+        }
+
+        //user edit (save)
+        private void bunifuThinButton25_Click(object sender, EventArgs e)
+        {
+            user u = new user();
+            u.ID = Convert.ToInt32(txtUserID.Text);
+            u.name = txtUserName.Text;
+            u.password = txtUserPassword.Text;
+            u.isAdmin = radioAdmin.Checked;
+
+            using(sunilGarageDBEntities db=new sunilGarageDBEntities())
+            {
+                try
+                {
+                    db.Entry(u).State = EntityState.Modified;
+                    db.SaveChanges();
+                    fillUserTable();
+                    clearUserTextFields();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        //delete user..
+        private void bunifuThinButton28_Click(object sender, EventArgs e)
+        {
+            user u = new user();
+            try
+            {
+                u.ID = Convert.ToInt32(txtUserID.Text);
+                u.name = txtUserName.Text;
+                u.password = txtUserPassword.Text;
+                u.isAdmin = radioAdmin.Checked;
+
+                
+
+
+                if (MessageBox.Show("are you sure you want to delete this user?", "delete user", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    using (sunilGarageDBEntities db = new sunilGarageDBEntities())
+                    {
+                        db.Entry(u).State = EntityState.Modified;
+                        var entry = db.Entry(u);
+                        if (entry.State == EntityState.Detached)
+                            db.users.Attach(u);
+                        db.users.Remove(u);
+                        db.SaveChanges();
+                        fillUserTable();
+                        fillNextUserID();
+                        clearUserTextFields();
+                    }
+                    MessageBox.Show("user deleted");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //log out
+        private void bunifuThinButton215_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            stPage.Show();
+        }
+
+        //exit button
+        private void bunifuThinButton213_Click(object sender, EventArgs e)
+        {
+
+            Application.Exit();
+
+        }
+
+        //refresh events with timer
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            fillOngoingRepairs();
+            checkInventoryWarnings();
+            
+        }
+
+        //generate Report
+        private void bunifuThinButton212_Click(object sender, EventArgs e)
+        {
+            report r = new report();
+            r.Show();
+            
+        }
+
+        
     }
 
    

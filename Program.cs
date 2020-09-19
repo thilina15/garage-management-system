@@ -16,10 +16,14 @@ namespace myFirstApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new startPage());
+           Application.Run(new startPage());
+            //Application.Run(new report());
             //Application.Run(new adminPage());
             //Application.Run(new mechanistPage());
-            Application.Run(new addingSpareParts());
+            //Application.Run(new addingSpareParts());
+            //Application.Run(new jobDetails());
+            //Application.Run(new startPage());E:\MIT_Web_gitHub\garage-management-system\Program.cs
+
         }
     }
 }

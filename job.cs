@@ -28,6 +28,7 @@ namespace myFirstApp
         public Nullable<int> itemsCost { get; set; }
         public Nullable<int> serviceCost { get; set; }
         public string customerNIC { get; set; }
+        public Nullable<System.DateTime> date { get; set; }
     
         public virtual customer customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

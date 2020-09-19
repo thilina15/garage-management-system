@@ -14,23 +14,21 @@ namespace myFirstApp
     public partial class login : Form
     {
         bool isAdmin;
-        startPage stPage;
+       startPage stPage;
 
-        public login(bool b, startPage sPage)
+        public login(bool b,startPage st)
         {
             InitializeComponent();
-             isAdmin =b;
-            stPage = sPage;
-            //stPage.Hide();
+            isAdmin =b;
+            stPage = st;
 
             if (isAdmin)
             {
-                lableName.Text = "    ADMIN";
+                bunifuCustomLabel1.Text = "    ADMIN";
             }
             else
             {
-                lableName.Text = "MECHANIST";
-                loginPictureBox.Image = Properties.Resources.download1;
+                bunifuCustomLabel1.Text = "MECHANIST";
 
                 
             }
@@ -39,72 +37,60 @@ namespace myFirstApp
            
         }
 
-        private void button1_Click(object sender, EventArgs e)  //login button click
+        //login click
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            int ID=0;
-            string password = textPassword.Text;
+            
 
-            try {
-                ID = int.Parse(txtUserName.Text);
+            //saving input details
+            string userName = txtUserName.Text;
+            string password = textPassword.Text;
+            try
+            {
+                using (sunilGarageDBEntities db = new sunilGarageDBEntities())
+                {
+                    //get effected rows
+                    int n = db.users.Where(x => x.password == password && x.name == userName && x.isAdmin == isAdmin).Count();
+                    if (n > 0)//has rows
+                    {
+                        if (isAdmin)
+                        {
+                            adminPage ad = new adminPage(stPage);
+                            ad.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            mechanistPage mc = new mechanistPage();
+                            mc.Show();
+                            this.Hide();
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("input details are invalid");
+                    }
+                }
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
             
-            
 
-            if (isAdmin) //check admin details
-            {
-                MySqlDataReader loginDetails =   DB.readQuery("select adminID, password from admin where adminID = "+ID+" and password= '"+password+"'");
-                if (loginDetails.HasRows)
-                {
-                    MessageBox.Show("user found");
-                    adminPage ap = new adminPage();
-                    this.Close();
-                    ap.Show();
-                }
-                else
-                {
-                    MessageBox.Show("user not found");
-                }
-            }
-            else //check garage details
-            {
-                mechanistPage mp = new mechanistPage();
-                mp.Show();
-            }
-
-
+           
         }
 
-        private void button2_Click(object sender, EventArgs e)//back
+        //exit
+        private void bunifuThinButton22_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
             stPage.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)//exit
-        {
-            stPage.Close();
-        }
-
-        private void txtUserName_KeyPress(object sender, KeyPressEventArgs e) //controlling user input from ID field
-        {
-            if (e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                MessageBox.Show("you can only input digits");
-            }
-        }
-
-        private void login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lableName_Click(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }
